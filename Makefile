@@ -6,7 +6,7 @@ FLAGS = -Wall -Wextra -Werror -g
 
 GREEN = \033[0;32m
 NC = \033[0m
-SRCS = main.c
+SRCS = main.c check_argv.c
 
 all: $(NAME)
 
