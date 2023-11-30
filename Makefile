@@ -11,14 +11,14 @@ SRCS = main.c
 all: $(NAME)
 
 $(NAME): $(SRCS) $(LIBFT)
-	cc $(FLAGS) $(SRCS) $(LIBFT) -o $(NAME)
+	@cc $(FLAGS) $(SRCS) $(LIBFT) -o $(NAME)
 	@echo "$(GREEN)push_swap created successfully!$(NC)"
 
 $(LIBFT): 
 	@$(MAKE) -C libft/
 
 clean:
-	$(MAKE) clean -C libft/
+	@$(MAKE) clean -C libft/
 	@echo "$(GREEN)Helper files removed!$(NC)"
 
 
