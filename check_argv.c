@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 22:50:23 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/01 13:46:34 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/01 14:11:04 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@ int	*check_argv(int argc, char *argv[])
 
 	if (argc < 2)
 		return (0);
-	args = (int *)malloc(sizeof(int) * (argc - 1));
+	args = (int *)malloc(sizeof(int) * (argc));
 	if (!args)
 		return (0);
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
-		if (!check_arg(argv[i], &args[i - 1]))
+		if (!check_arg(argv[i], &args[i]))
 		{
 			free (args);
 			return (0);
 		}
 		i++;
 	}
-	if (!check_duplicates(argc - 1, args))
+	if (!check_duplicates(argc, args))
 	{
 		free (args);
 		return (0);
