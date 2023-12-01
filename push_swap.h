@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:32:32 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/11/30 22:55:24 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/01 13:08:10 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "libft/libft.h"
 # include <stdio.h> //REMOVE ME!!!
-# include <limits.h> //REMOVE ME!!!
 
-int	check_arg(char *arg);
+
+int	*check_argv(int argc, char *argv[]);
 
 #endif

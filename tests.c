@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:09:00 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/11/30 23:10:03 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/01 10:51:32 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@
 // 	ft_printf("%d\n", check_arg("-34253434523452345"));
 // 	ft_printf("%d\n", check_arg("34523465475674562345"));
 // 	ft_printf("%d\n", check_arg("a2314"));
+// 	ft_printf("%d\n", check_arg("+"));
+// 	ft_printf("%d\n", check_arg("-"));
+// 	ft_printf("%d\n", check_arg(""));
 // 	ft_printf("\n");
 // 	return (0);
 
