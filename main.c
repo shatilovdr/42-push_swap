@@ -6,47 +6,65 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:09:04 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/01 15:25:47 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/02 18:49:40 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-void	test(void *input)
-{
-	int	*a;
-
-	a = (int *)input;
-	ft_printf("%d ", *a);
-}
-
 int	main(int argc, char *argv[])
 {
-	int		*args; //FREE YOUR ARGS!!!!
-	int		i;
 	t_list	*lst;
-	
+	int		i;
+	int		*args; //FREE YOUR ARGS!!!!
 
+	if (argc < 2)
+	{
+		write(2, "\n", 1);
+		return (0);
+	}
 	args = check_argv(--argc, ++argv);
 	if (!args)
 	{
-		ft_printf("Error\n");
+		write(2, "Error\n", 6);
 		return (0);
 	}
-	i = 0;
-	lst = 0;
-	while (i < argc)
+	lst = create_list(args, argc);
+	if (!lst)
 	{
-		ft_lstadd_back(&lst, ft_lstnew(args + i));
-		i++;
+		write(2, "Error\n", 6);
+		return (0);
 	}
-	ft_lstiter(lst, test);
-
-	// for (int j = 0; j < argc; j++)
-	// 	printf("%d ", args[i]);
-	// printf("\nSUCCESS!");
-
 	return (0);
 }
+
+
+
+// int	main(void)
+// {
+// 	int		*arr;
+// 	t_list	*lst1;
+// 	t_list	*lst2;
+// 	t_list	*temp;
+// 	int		i;
+
+// 	arr = (int *)malloc(sizeof(int) * 10);
+// 	i = 1;
+// 	while (i <= 10)
+// 		arr[i - 1] = i++;
+// 	i = 0;
+// 	while (i < 5)
+// 	{
+// 		temp = ft_lstnew(arr + i++);
+// 		if (!temp)
+// 		{
+// 			ft_lstclear(lst1, free);
+// 			return
+// 		}
+// 		ft_lstadd_back(&lst1, temp);
+// 	}
+
+
+// 	return (0);
+// }
 

@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 22:50:23 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/01 14:11:04 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:28:24 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	*check_argv(int argc, char *argv[])
 	int	i;
 	int	*args;
 
-	if (argc < 2)
-		return (0);
 	args = (int *)malloc(sizeof(int) * (argc));
 	if (!args)
 		return (0);
