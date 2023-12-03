@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   stack_operations.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 12:32:32 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/03 12:40:29 by dshatilo         ###   ########.fr       */
+/*   Created: 2023/12/03 11:33:06 by dshatilo          #+#    #+#             */
+/*   Updated: 2023/12/03 12:13:07 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef STACK_OPERATIONS_H
+# define STACK_OPERATIONS_H
 
 # include "libft/libft.h"
 
-int		*check_argv(int argc, char *argv[]);
-t_list	*create_list(int *arr, int length);
-void	sa(t_list **lst);
-void	pa(t_list **lst_a, t_list **lst_b);
-void	ra(t_list **lst);
-void	rra(t_list **lst);
-void	sb(t_list **lst);
-void	pb(t_list **lst_a, t_list **lst_b);
-void	rb(t_list **lst);
-void	rrb(t_list **lst);
-void	apply_same_time(char *mode, t_list **lst1, t_list **lst2);
+void	swap(t_list **lst);
+void	push(t_list **lst1, t_list **lst2);
+void	rotate(t_list **lst);
+void	reverse_rotate(t_list **lst);
 
 #endif

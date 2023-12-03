@@ -6,65 +6,70 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:09:04 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/02 18:49:40 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/03 11:31:19 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	print_list(void *content)
 {
-	t_list	*lst;
-	int		i;
-	int		*args; //FREE YOUR ARGS!!!!
+	ft_printf("%d ", *(int *)content);
+}
 
-	if (argc < 2)
+int	main(void)
+{
+	int		*arr;
+	t_list	*lst1;
+	t_list	*lst2;
+	int		i;
+
+	arr = (int *)malloc(sizeof(int) * 10);
+	i = 0;
+	while (i < 10)
 	{
-		write(2, "\n", 1);
-		return (0);
+		arr[i] = i;
+		i++;
 	}
-	args = check_argv(--argc, ++argv);
-	if (!args)
-	{
-		write(2, "Error\n", 6);
-		return (0);
-	}
-	lst = create_list(args, argc);
-	if (!lst)
-	{
-		write(2, "Error\n", 6);
-		return (0);
-	}
+	lst1 = create_list(arr, 5);
+	lst2 = create_list(arr + 5, 5);
+	ft_lstiter(lst1, print_list);
+	ft_printf("\n");
+	ft_lstiter(lst2, print_list);
+	ft_printf("\n\n");
+	push(&lst1, &lst2);
+	rotate(&lst1);
+	ft_lstiter(lst1, print_list);
+	ft_printf("\n");
+	ft_lstiter(lst2, print_list);
 	return (0);
 }
 
+//Check why there is no segfault in revers_rotate 
+	//when lst contains 2 elements only. 
 
 
-// int	main(void)
+// int	main(int argc, char *argv[])
 // {
-// 	int		*arr;
-// 	t_list	*lst1;
-// 	t_list	*lst2;
-// 	t_list	*temp;
-// 	int		i;
+// 	t_list	*lst;
+// 	int		*args; //FREE YOUR ARGS!!!!
 
-// 	arr = (int *)malloc(sizeof(int) * 10);
-// 	i = 1;
-// 	while (i <= 10)
-// 		arr[i - 1] = i++;
-// 	i = 0;
-// 	while (i < 5)
+// 	if (argc < 2)
 // 	{
-// 		temp = ft_lstnew(arr + i++);
-// 		if (!temp)
-// 		{
-// 			ft_lstclear(lst1, free);
-// 			return
-// 		}
-// 		ft_lstadd_back(&lst1, temp);
+// 		write(1, "\n", 1);
+// 		return (0);
 // 	}
-
-
+// 	args = check_argv(--argc, ++argv);
+// 	if (!args)
+// 	{
+// 		write(2, "Error\n", 6);
+// 		return (0);
+// 	}
+// 	lst = create_list(args, argc);
+// 	if (!lst)
+// 	{
+// 		write(2, "Error\n", 6);
+// 		return (0);
+// 	}
 // 	return (0);
 // }
-
