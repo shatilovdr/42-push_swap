@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 12:13:35 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/03 12:39:07 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/04 12:25:33 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 void	sa(t_list **lst)
 {
 	swap(lst);
-	ft_pritnf("sa\n");
+	ft_printf("sa\n");
 }
 
 void	pa(t_list **lst_a, t_list **lst_b)
 {
 	push(lst_a, lst_b);
-	ft_pritnf("pa\n");
+	ft_printf("pa\n");
 }
 
 void	ra(t_list **lst)
 {
 	rotate(lst);
-	ft_pritnf("ra\n");
+	ft_printf("ra\n");
 }
 
 void	rra(t_list **lst)
 {
 	reverse_rotate(lst);
-	ft_pritnf("rra\n");
+	ft_printf("rra\n");
 }
 
 void	apply_same_time(char *mode, t_list **lst1, t_list **lst2)
@@ -43,17 +43,17 @@ void	apply_same_time(char *mode, t_list **lst1, t_list **lst2)
 	if (*mode == 's')
 	{
 		f = swap;
-		ft_pritnf("ss\n");
+		ft_printf("ss\n");
 	}
 	else if (*mode == 'r' && mode[1] == 'o')
 	{
 		f = rotate;
-		ft_pritnf("rr\n");
+		ft_printf("rr\n");
 	}
 	else if (*mode == 'r' && mode[1] == 'r')
 	{
 		f = reverse_rotate;
-		ft_pritnf("rrr\n");
+		ft_printf("rrr\n");
 	}
 	else
 		return ;

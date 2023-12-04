@@ -6,9 +6,46 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:09:00 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/03 12:18:41 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/04 12:52:11 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//Check why there is no segfault in revers_rotate 
+	//when lst contains 2 elements only. 
+
+
+// int	main(int argc, char *argv[])
+// {
+// 	t_list	*lst;
+// 	int		*args; //FREE YOUR ARGS!!!!
+
+// 	if (argc < 2)
+// 	{
+// 		write(1, "\n", 1);
+// 		return (0);
+// 	}
+// 	args = check_argv(--argc, ++argv);
+// 	if (!args)
+// 	{
+// 		write(2, "Error\n", 6);
+// 		return (0);
+// 	}
+// 	lst = create_list(args, argc);
+// 	if (!lst)
+// 	{
+// 		write(2, "Error\n", 6);
+// 		return (0);
+// 	}
+// 	return (0);
+// }
+
+
+
+
+
+
+
+
 
 // Check possible input numbers
 

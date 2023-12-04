@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:32:32 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/03 12:40:29 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/04 12:26:39 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+#include <time.h> //REMOVE ME!!!
 
 int		*check_argv(int argc, char *argv[]);
 t_list	*create_list(int *arr, int length);
