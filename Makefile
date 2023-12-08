@@ -6,7 +6,7 @@ FLAGS = -Wall -Wextra -Werror -g
 
 GREEN = \033[0;32m
 NC = \033[0m
-SRCS = main.c check_argv.c create_list.c stack_operations.c operations_a.c operations_b.c
+SRCS = main.c check_argv.c create_list.c stack_operations.c operations_a.c operations_b.c file1.c
 
 all: $(NAME)
 

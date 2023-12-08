@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 23:09:00 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/04 12:52:11 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/08 17:47:00 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,35 @@
 // 	return (0);
 // }
 
+// void	do_nothing(void *test)
+// {
+// 	*(int *)test += 0;
+// }
 
+// int	main(int argc, char *argv[])
+// {
+// 	t_list	*lst;
+// 	int		*args; //FREE YOUR ARGS!!!!
+
+// 	if (argc < 2)
+// 	{
+// 		write(1, "\n", 1);
+// 		return (0);
+// 	}
+// 	args = check_argv(--argc, ++argv);
+// 	if (!args)
+// 	{
+// 		write(2, "Error\n", 6);
+// 		return (0);
+// 	}
+// 	lst = create_list(args, argc);
+// 	if (!lst)
+// 		return (0);
+// 	lst = sort_lst(lst, 0);
+// 	ft_lstclear(&lst, do_nothing);
+// 	free(args);
+// 	return (0);
+// }
 
 
 

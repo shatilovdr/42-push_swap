@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 17:55:59 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/02 18:48:44 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/07 10:53:24 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_list	*create_list(int *arr, int length)
 		if (!temp)
 		{
 			ft_lstclear(&lst, free);
+			write(2, "Error\n", 6);
 			return (0);
 		}
 		ft_lstadd_back(&lst, temp);
