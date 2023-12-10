@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:09:04 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/08 19:24:24 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/10 18:26:43 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,59 +46,73 @@ int	main(void)
 	return (0);
 }
 
-int	max(int a, int b)
+int	push_swap(t_moves m, t_list **a, t_list **b)
 {
-	return (a * (a >= b) + b * (a < b));
+	if (!(ft_strncmp(m.dir, "rr", 3) && ft_strncmp(m.dir, "rrr", 3)))
+		while (*a != m.a && *b != m.b)
+			apply_same_time(m.direction, a, b);
+	while (*a != m.a)
+	{
+		if (!(ft_strncmp(m.dir, "rr", 3) && ft_strncmp(m.dir, "ud", 2)))
+			ra(a);
+		else
+			rra(a);
+	}
+	while (*b != m.b)
+	{
+		if (!(ft_strncmp(m.dir, "rr", 3) && ft_strncmp(m.dir, "du", 2)))
+			rb(b);
+		else
+			rrb(b);
+	}
+	pa(a, b);
 }
 
-int	min(int a, int b)
+int	optimal(t_moves	*moves, int len)
 {
-	return (a * (a <= b) + b * (a > b));
+	int	i;
+	int	min;
+	int	min_index;
+
+	i = 0;
+	min_index = 0;
+	min = moves[0].result;
+	while (i < len)
+	{
+		if (moves[i].result < min)
+		{
+			min = moves[i].result;
+			min_index = i;
+		}
+		i++;
+	}
+	return (min_index);
 }
 
-
-void	calculate_move(t_moves *m, t_list *a, t_list *b, int pos_b)
+void	super_sort(t_list **pa, t_list **pb)
 {
-	int		rr;
-	int		rrr;
-
-	m->b_u = pos_b;
-	m->b_d = ft_lstsize(b);
-	m->a_u = ft_lstsize(a);
-	a = get_pos(b, a);
-	m->a_d = ft_lstsize(a);
-	m->a_u -= m->a_d;
-	rr = max(m->a_u, m->b_u);
-	rrr = max(m->a_d, m->b_d);
-	m->result = min(rr, rrr);
-	m->result = min(m->result, m->a_d + m->b_u);
-	m->result = min(m->result, m->a_u + m->b_d);
-	if (m->result == rr)
-		m->direction = 11;
-	else if (m->result == rrr)
-		m->direction = 0;
-	else if (m->result == m->a_d + m->b_u)
-		m->direction = 01;
-	else
-		m->direction = 10;
-}
-
-void	super_sort(t_list *a, t_list *b)
-{
-	int		len_b;
 	int		i;
+	int		len_b;
+	t_list	*a;
+	t_list	*b;
 	t_moves	*moves;//FREE YOUR MOVES
 
 	i = 0;
+	a = *pa;
+	b = *pb;
 	len_b = ft_lstsize(b);
-	moves = (t_moves *)malloc(sizeof(t_moves) * len_b);
+	moves = (t_moves *)ft_calloc(len_b, sizeof(t_moves));
 		//if (!moves)
-	while (i < len_b)
+				
+	while (b)
 	{
 		calculate_move(moves + i, a, b, i);
+		b = b->next;
 		i++;
 	}
-	free(moves);
+	i = optimal(moves, len_b);
+	push_swap(moves[i], pa, pb);
+	free (moves);
 }
 
 

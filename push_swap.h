@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:32:32 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/08 18:54:34 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/09 13:08:38 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@
 
 typedef struct s_moves
 {
-	int		a_u;
-	int		a_d;
-	int		b_u;
-	int		b_d;
+	t_list	*a;
+	t_list	*b;
 	int		result;
-	short	direction;
+	char	*direction;
 }	t_moves;
 
 int		*check_argv(int argc, char *argv[]);
@@ -41,6 +39,6 @@ void	apply_same_time(char *mode, t_list **lst1, t_list **lst2);
 
 t_list	*get_pos(t_list *lst_1, t_list *lst_2);
 t_list	*small_sort(t_list **plst);
-
+void	calculate_move(t_moves *m, t_list *a, t_list *b, int b_u);
 
 #endif
