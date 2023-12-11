@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:15:11 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/11 15:14:37 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/11 21:57:15 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ void	push_swap(int *args_arr, int argc)
 		return ;
 	}
 	temp = 0;
-	sort_list(&lst, &temp);
+	if (sort_list(&lst, &temp))
+	{
+		write(2, "Error\n", 6);
+		ft_lstclear(&temp, do_nothing);
+	}
 	ft_lstclear(&lst, do_nothing);
 }
 

@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 16:51:11 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/11 17:35:31 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/11 21:14:14 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,16 @@ int	is_sorted(t_list **plst)
 	int		ncontent;
 
 	lst = *plst;
-	if (!lst)
-		return (0);
 	content = *(int *)(lst->content);
 	while (lst->next)
 	{
 		ncontent = *(int *)(lst->next->content);
 		if (ncontent < content)
-			return (0);
+			return (1);
 		content = ncontent;
 		lst = lst->next;
 	}
-	return (1);
+	return (0);
 }
 
 void	calculate_steps(t_steps *s, t_list *a, t_list *b, int b_u)
