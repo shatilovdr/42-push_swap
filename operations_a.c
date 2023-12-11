@@ -6,57 +6,61 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 12:13:35 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/04 12:25:33 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/11 11:07:46 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_operations.h"
 
-void	sa(t_list **lst)
+int	sa(t_list **lst)
 {
 	swap(lst);
-	ft_printf("sa\n");
+	return (ft_printf("sa\n") == -1);
 }
 
-void	pa(t_list **lst_a, t_list **lst_b)
+int	pa(t_list **lst_a, t_list **lst_b)
 {
 	push(lst_a, lst_b);
-	ft_printf("pa\n");
+	return (ft_printf("pa\n") == -1);
 }
 
-void	ra(t_list **lst)
+int	ra(t_list **lst)
 {
 	rotate(lst);
-	ft_printf("ra\n");
+	return (ft_printf("ra\n") == -1);
 }
 
-void	rra(t_list **lst)
+int	rra(t_list **lst)
 {
 	reverse_rotate(lst);
-	ft_printf("rra\n");
+	return (ft_printf("rra\n") == -1);
 }
 
-void	apply_same_time(char *mode, t_list **lst1, t_list **lst2)
+int	apply_same_time(char *mode, t_list **lst1, t_list **lst2)
 {
 	void	(*f)(t_list **);
+	int		res;
 
-	if (*mode == 's')
+	if (!ft_strncmp(mode, "ss", 3))
 	{
 		f = swap;
-		ft_printf("ss\n");
+		res = ft_printf("ss\n");
 	}
-	else if (*mode == 'r' && mode[1] == 'o')
-	{
-		f = rotate;
-		ft_printf("rr\n");
-	}
-	else if (*mode == 'r' && mode[1] == 'r')
+	else if (!ft_strncmp(mode, "rrr", 3))
 	{
 		f = reverse_rotate;
-		ft_printf("rrr\n");
+		res = ft_printf("rrr\n");
+	}
+	else if (!ft_strncmp(mode, "rr", 3))
+	{
+		f = rotate;
+		res = ft_printf("rr\n");
 	}
 	else
-		return ;
+		return (1);
+	if (res == -1)
+		return (1);
 	f(lst1);
 	f(lst2);
+	return (0);
 }

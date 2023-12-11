@@ -6,32 +6,32 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 12:13:35 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/04 12:25:38 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/11 09:59:45 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_operations.h"
 
-void	sb(t_list **lst)
+int	sb(t_list **lst)
 {
 	swap(lst);
-	ft_printf("sb\n");
+	return (ft_printf("sb\n") == -1);
 }
 
-void	pb(t_list **lst_a, t_list **lst_b)
+int	pb(t_list **lst_a, t_list **lst_b)
 {
 	push(lst_b, lst_a);
-	ft_printf("pb\n");
+	return (ft_printf("pb\n") == -1);
 }
 
-void	rb(t_list **lst)
+int	rb(t_list **lst)
 {
 	rotate(lst);
-	ft_printf("rb\n");
+	return (ft_printf("rb\n") == -1);
 }
 
-void	rrb(t_list **lst)
+int	rrb(t_list **lst)
 {
 	reverse_rotate(lst);
-	ft_printf("rrb\n");
+	return (ft_printf("rrb\n") == -1);
 }
