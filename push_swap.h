@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:32:32 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/11 22:35:38 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/12 16:23:51 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ typedef struct s_steps
 	char	*dir;
 }	t_steps;
 
-char	**one_arg(char *argv[]);
-int		*check_argv(int argc, char *argv[]);
+int		*check_argc(int *argc, char *argv[]);
 void	push_swap(int *args_arr, int argc);
 t_list	*create_list(int *arr, int length);
 int		sort_list(t_list **a, t_list **b);
@@ -33,7 +32,7 @@ int		is_sorted(t_list **plst);
 void	calculate_steps(t_steps *s, t_list *a, t_list *b, int b_u);
 t_list	*find_pos_to_push(t_list *lst_1, t_list *lst_2);
 int		find_benefitial(t_steps	*steps, int len);
-int		ft_free(t_steps *steps);
+int		free_steps(t_steps *steps);
 t_list	*get_node_min_content(t_list *lst);
 void	do_nothing(void *arg);
 

@@ -6,13 +6,11 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:15:11 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/11 21:57:15 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/12 19:00:54 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	do_nothing(void *arg);
 
 void	push_swap(int *args_arr, int argc)
 {

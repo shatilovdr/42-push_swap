@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:52:49 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/11 22:41:15 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/12 14:15:58 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	empty_b_recursively(t_list **a, t_list **b)
 	}
 	i = find_benefitial(steps, len_b);
 	if (push_benfitial(steps[i], a, b))
-		return (ft_free(steps));
+		return (free_steps(steps));
 	free (steps);
 	return (empty_b_recursively(a, b));
 }

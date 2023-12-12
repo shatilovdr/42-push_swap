@@ -1,5 +1,5 @@
 NAME = push_swap
-
+BNS = checker
 LIBFT = libft/libft.a
 
 FLAGS = -Wall -Wextra -Werror -g
@@ -7,6 +7,7 @@ FLAGS = -Wall -Wextra -Werror -g
 GREEN = \033[0;32m
 NC = \033[0m
 SRCS = main.c check_argv.c push_swap.c create_list.c sort.c sort_utils2.c sort_utils.c stack_operations.c operations_a.c operations_b.c
+BSRCS = check_argv.c push_swap.c create_list.c sort.c sort_utils2.c sort_utils.c stack_operations.c operations_a.c operations_b.c checker.c
 
 all: $(NAME)
 
@@ -16,6 +17,13 @@ $(NAME): $(SRCS) $(LIBFT)
 
 $(LIBFT): 
 	@$(MAKE) -C libft/
+
+bonus: $(BNS)
+
+
+$(BNS): $(BSRCS) $(LIBFT)
+	@cc $(FLAGS) $(BSRCS) $(LIBFT) -o $(BNS)
+	@echo "$(GREEN)push_swap created successfully!$(NC)"
 
 clean:
 	@$(MAKE) clean -C libft/

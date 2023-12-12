@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 17:44:05 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/11 22:36:58 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/12 14:15:13 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,8 @@ t_list	*get_node_min_content(t_list *lst)
 	return (min);
 }
 
-int	ft_free(t_steps *steps)
+int	free_steps(t_steps *steps)
 {
 	free(steps);
 	return (1);
-}
-
-char	**one_arg(char *argv[])
-{
-	argv = ft_split(argv[1], ' ');
-	if (!argv)
-	{
-		write(2, "Error\n", 6);
-		return (NULL);
-	}
-	return (argv);
 }

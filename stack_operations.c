@@ -6,7 +6,7 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 16:12:57 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/03 12:28:11 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/12 17:41:09 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,18 @@ void	reverse_rotate(t_list **lst)
 	curr->next = 0;
 	head->next = *lst;
 	*lst = head;
+}
+
+void	both(char *mode, t_list **lst1, t_list **lst2)
+{
+	void	(*f)(t_list **);
+
+	if (!ft_strncmp(mode, "ss", 2))
+		f = swap;
+	else if (!ft_strncmp(mode, "rrr", 3))
+		f = reverse_rotate;
+	else
+		f = rotate;
+	f(lst1);
+	f(lst2);
 }
