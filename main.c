@@ -6,11 +6,11 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:09:04 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/12 17:52:59 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:45:30 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "srcs/push_swap.h"
 
 int	main(int argc, char *argv[])
 {

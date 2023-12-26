@@ -1,39 +1,42 @@
-NAME = push_swap
-BNS = checker
-LIBFT = libft/libft.a
+#PUSH_SWAP_PROJECT_MAKEFILE
+include lib/libft/.make
+NAME			:=	push_swap
+BONUS			:=	checker
+SRCS_NAME		:=	check_argv.c check_one_arg.c push_swap.c create_list.c sort.c sort_utils2.c sort_utils.c stack_operations.c operations_a.c operations_b.c
+BONUS_SRCS_NAME	:=	check_argv.c check_one_arg.c push_swap.c create_list.c sort.c sort_utils2.c sort_utils.c stack_operations.c operations_a.c operations_b.c
+SRCS_PATH		:=	srcs/
+SRCS			:=	main.c $(addprefix $(SRCS_PATH), $(SRCS_NAME))
+BONUS_SRCS		:=	checker.c $(addprefix $(SRCS_PATH), $(BONUS_SRCS_NAME))
 
-FLAGS = -Wall -Wextra -Werror -g
 
-GREEN = \033[0;32m
-NC = \033[0m
-SRCS = main.c check_argv.c push_swap.c create_list.c sort.c sort_utils2.c sort_utils.c stack_operations.c operations_a.c operations_b.c
-BSRCS = check_argv.c push_swap.c create_list.c sort.c sort_utils2.c sort_utils.c stack_operations.c operations_a.c operations_b.c checker.c
+LIBFT_PATH		:=	lib/$(LIBFT_PATH)
+LIBFT 			:=	$(addprefix $(LIBFT_PATH), $(LIBFT))
+LIBFT_SOURSES 	:=	$(addprefix $(LIBFT_PATH), $(LIBFT_SOURSES))
 
 all: $(NAME)
 
-$(NAME): $(SRCS) $(LIBFT)
-	@cc $(FLAGS) $(SRCS) $(LIBFT) -o $(NAME)
-	@echo "$(GREEN)push_swap created successfully!$(NC)"
+$(NAME): $(LIBFT) $(SRCS) 
+	@$(CC) $(FLAGS) $(LIBFT) $(SRCS)  -o $(NAME)
+	@echo "$(GREEN)\n------------->push_swap created successfully!<------------$(NC)"
 
-$(LIBFT): 
-	@$(MAKE) -C libft/
+bonus: $(BONUS)
 
-bonus: $(BNS)
+$(BONUS):  $(LIBFT) $(BONUS_SRCS)
+	@$(CC) $(FLAGS) $(LIBFT) $(BONUS_SRCS) -o $(BONUS)
+		@echo "$(GREEN)\n------------->checker created successfully!<-------------$(NC)"
 
-
-$(BNS): $(BSRCS) $(LIBFT)
-	@cc $(FLAGS) $(BSRCS) $(LIBFT) -o $(BNS)
-	@echo "$(GREEN)push_swap created successfully!$(NC)"
+$(LIBFT): $(LIBFT_SOURSES)
+	@$(MAKE) -C $(LIBFT_PATH)
 
 clean:
-	@$(MAKE) clean -C libft/
-	@echo "$(GREEN)Helper files removed!$(NC)"
+	@$(MAKE) clean -C $(LIBFT_PATH)
+	@echo "$(GREEN)*.o files removed!$(NC)"
 
 
 fclean: clean
 	@rm -f $(NAME)
-	@$(MAKE) fclean -C libft/
-	@echo "$(GREEN)push_swap removed!$(NC)"
-
+	@rm -f $(BONUS)
+	@$(MAKE) fclean -C $(LIBFT_PATH)
+	@echo "$(GREEN)All files removed!$(NC)"
 
 re: fclean all

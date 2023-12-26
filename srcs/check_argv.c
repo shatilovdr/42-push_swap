@@ -6,21 +6,15 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 22:50:23 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/12 18:22:51 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:59:15 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	count_words(char *str, char c);
-
-int		*check_argv(int argc, char *argv[]);
-
 int		check_arg(char *arg, int *num);
 
 int		check_duplicates(int len, int *args);
-
-int		*one_arg(int *argc, char *argv[]);
 
 int	*check_argc(int *argc, char *argv[])
 {
@@ -29,7 +23,7 @@ int	*check_argc(int *argc, char *argv[])
 	if (*argc < 2)
 		return (0);
 	if (*argc == 2 && count_words(argv[1], ' ') > 1)
-		args_arr = one_arg(argc, argv);
+		args_arr = check_one_arg(argc, argv);
 	else
 		args_arr = check_argv(--(*argc), ++argv);
 	if (!args_arr)
@@ -38,40 +32,6 @@ int	*check_argc(int *argc, char *argv[])
 		return (0);
 	}
 	return (args_arr);
-}
-
-int	*one_arg(int *argc, char *argv[])
-{
-	int	*args_arr;
-	int	len;
-
-	len = count_words(argv[1], ' ');
-	argv = ft_split(argv[1], ' ');
-	if (!argv)
-		return (NULL);
-	*argc = len;
-	args_arr = check_argv(*argc, argv);
-	while (len >= 0)
-		free(argv[len--]);
-	free(argv);
-	return (args_arr);
-}
-
-size_t	count_words(char *str, char c)
-{
-	size_t	count;
-	size_t	i;
-
-	count = 0;
-	i = 0;
-	while (*(str + i) != 0)
-	{
-		if (!(*(str + i) == c))
-			if (i == 0 || *(str + i - 1) == c)
-				count++;
-		i++;
-	}
-	return (count);
 }
 
 int	*check_argv(int argc, char *argv[])

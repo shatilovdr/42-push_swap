@@ -6,14 +6,14 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:32:32 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/12 16:23:51 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:59:39 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../lib/libft/libft.h"
 # include <limits.h>
 
 typedef struct s_steps
@@ -25,6 +25,9 @@ typedef struct s_steps
 }	t_steps;
 
 int		*check_argc(int *argc, char *argv[]);
+int		*check_one_arg(int *argc, char *argv[]);
+size_t	count_words(char *str, char c);
+int		*check_argv(int argc, char *argv[]);
 void	push_swap(int *args_arr, int argc);
 t_list	*create_list(int *arr, int length);
 int		sort_list(t_list **a, t_list **b);

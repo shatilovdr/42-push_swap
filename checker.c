@@ -6,12 +6,12 @@
 /*   By: dshatilo <dshatilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:59:41 by dshatilo          #+#    #+#             */
-/*   Updated: 2023/12/12 17:44:05 by dshatilo         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:45:42 by dshatilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "stack_operations.h"
+#include "srcs/push_swap.h"
+#include "srcs/stack_operations.h"
 
 int	checker(int *args_arr, int argc);
 int	apply_func(char *mode, t_list **lst1, t_list **lst2);
